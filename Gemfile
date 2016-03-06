@@ -47,3 +47,7 @@ gem "twitter-bootstrap-rails"
 
 gem 'savon', '~> 2.11.0'
 
+gem 'mina-puma', :require => false
+
+gem 'puma'
+
