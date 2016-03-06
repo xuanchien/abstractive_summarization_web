@@ -28,15 +28,14 @@ jQuery ->
 				$('#progress_bar').hide()
 				$('#summary_text').text(summary)
 				$('#generate_summary_button').prop('disabled', false)
-			error: (xhr, textStatus, error) ->
-				$('#summary_text').text("Error while processing your request. Please contact the admin")
-
-
 				words = StringUtils.countWords(summary)
 				characters = StringUtils.countCharacters(summary)
 				sentences = StringUtils.countSentences(summary)
 
 				updateStats(words, characters, sentences)
+
+			error: (xhr, textStatus, error) ->
+				$('#summary_text').text("Error while processing your request. Please contact the admin")
 
 	$('#original_text_area').on 'change input keyup propertychange paste', (e) ->
 		originalText = $('#original_text_area').val()
