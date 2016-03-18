@@ -10,8 +10,12 @@
 <div class="navbar navbar-inverse navbar-static-top" role="navigation">
 	<div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Abstractive Summarization System</a>
+      <a class="navbar-brand" href="/">Abstractive Summarization System</a>
     </div>
+    <ul class="nav navbar-nav">
+      <li class="<%= 'active' if action_name == 'index' && controller_name=='home' %>"><a href="<%= root_path %>">Single-doc Demo</a></li>
+      <li class="<%= 'active' if controller_name=='duc_data' %>"><a href="<%= duc_data_path %>">DUC 2004 Result</a></li>
+    </ul>
   </div>
 </div>
 <div class="container">
