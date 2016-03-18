@@ -1,0 +1,10 @@
+<div class="well">This is a demo of Multi-document summarization on DUC 2004 dataset. Click on each document set to see the result</div>
+<div class="row">
+	<% @doc_sets.each do |doc_set_id| %>
+		<div class="col-md-2">
+			<%= link_to(duc_data_set_path(doc_set_id)) do %>
+				<h4><%= doc_set_id %></h4>
+			<% end %>
+		</div>
+	<% end %>
+</div>

@@ -1,0 +1,20 @@
+<%= link_to "<<Back to list of documents", duc_data_path, class: "btn btn-default" %>
+<hr />
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		Summary result
+	</div>
+	<div class="panel-body" id="summary_text"><%= @summary.strip %></div>
+</div>
+<hr />
+<h2>List of original news</h2>
+<% @news.each do |title, content| %>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<%= title %>
+		</div>
+		<div class="panel-body">
+			<%= content %>
+		</div>
+	</div>
+<% end %>
