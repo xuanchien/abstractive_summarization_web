@@ -9,7 +9,9 @@ class SummarizationService
 
 		summary_text = response.body[:summarize_text_response][:return]
 
-		summary_text = summary_text.gsub(" \n", ".\n").gsub("-LRB-", "(").gsub("-RRB-", ")")
+		if !summary_text.blank?
+			summary_text = summary_text.gsub(" \n", ".\n").gsub("-LRB-", "(").gsub("-RRB-", ")")
+		end
 
 		summary_text
 	end
