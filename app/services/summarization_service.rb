@@ -7,12 +7,17 @@ class SummarizationService
 
 		response = client.call(REMOTE_METHOD_NAME.to_sym, message: {arg0: text, arg1: max_words})
 
-		summary_text = response.body[:summarize_text_response][:return]
+		summary_sentences = response.body[:summarize_text_response][:return]
 
-		if !summary_text.blank?
-			summary_text = summary_text.gsub(" \n", ".\n").gsub("-LRB-", "(").gsub("-RRB-", ")")
+		if summary_sentences.nil?
+			return []
+		end
+		if summary_sentences.is_a?(Hash)
+			summary_sentences = [summary_sentences[:item]]
+		else
+			summary_sentences = summary_sentences.map{|x| x[:item]}
 		end
 
-		summary_text
+		summary_sentences
 	end
 end

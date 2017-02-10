@@ -8,3 +8,31 @@
 #summary_text{
 	white-space: pre-line;
 }
+#original_text_view{
+	white-space: pre-line;
+}
+
+@media(min-width: 1200px){
+	.container{
+		width: 100%;
+	}
+}
+.np, .vp{
+	&:hover{
+		cursor: pointer;
+		color: #fff;
+		background-color: #3498db;
+	}
+	&.selected{
+		color: #fff;
+		background-color: #2980b9;
+	}
+}
+.highlight{
+	color: #fff;
+	background-color: #3498db;
+}
+.scrollable{
+	overflow-y: scroll;
+	max-height: 500px;
+}
